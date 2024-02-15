@@ -1,0 +1,175 @@
+#line 1 "D:\\SRC\\ARDUINO\\arduinoR9_2\\diagram.json"
+{
+  "version": 1,
+  "author": "박준호",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -425.4, "left": -131.6, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 77.4, "left": -173.4, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -176.4,
+      "left": 119,
+      "attrs": { "color": "green", "flip": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -91.2,
+      "left": 105.05,
+      "rotate": 90,
+      "attrs": { "value": "200" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -91.2,
+      "left": 57.05,
+      "rotate": 90,
+      "attrs": { "value": "200" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -176.4,
+      "left": 71,
+      "attrs": { "color": "blue", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -176.4,
+      "left": 23,
+      "attrs": { "color": "yellow", "flip": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -91.2,
+      "left": 9.05,
+      "rotate": 90,
+      "attrs": { "value": "200" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led4",
+      "top": -176.4,
+      "left": -34.6,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -105.7,
+      "left": -265.3,
+      "rotate": 90,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": -105.7,
+      "left": -342.1,
+      "rotate": 90,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": -105.7,
+      "left": -428.5,
+      "rotate": 90,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": -105.7,
+      "left": -514.9,
+      "rotate": 90,
+      "attrs": { "color": "red" }
+    },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": -335.8, "left": -422.4, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led5",
+      "top": -406.8,
+      "left": -207,
+      "attrs": { "color": "blue", "flip": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": -322.15,
+      "left": -260.6,
+      "rotate": 180,
+      "attrs": { "value": "200" }
+    },
+    { "type": "wokwi-relay-module", "id": "relay2", "top": -441.4, "left": -422.4, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r6",
+      "top": -456.55,
+      "left": -279.8,
+      "rotate": 180,
+      "attrs": { "value": "200" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led6",
+      "top": -502.8,
+      "left": -207,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": -91.2,
+      "left": -48.55,
+      "rotate": 90,
+      "attrs": { "value": "200" }
+    }
+  ],
+  "connections": [
+    [ "uno:3", "r1:2", "green", [ "v-38.4", "h61.6" ] ],
+    [ "uno:5", "r2:2", "green", [ "v-57.6", "h42.2" ] ],
+    [ "uno:6", "r3:2", "green", [ "v0" ] ],
+    [ "bb1:bn.1", "uno:GND.1", "black", [ "v200.3", "h145.3" ] ],
+    [ "uno:2", "btn1:2.r", "green", [ "v-105.6", "h-312.5" ] ],
+    [ "uno:5V", "bb1:bp.25", "red", [ "v47.9", "h253.4", "v-498.3" ] ],
+    [ "btn1:1.l", "bb1:bn.3", "black", [ "v-57.6", "h142.4" ] ],
+    [ "uno:4", "btn2:2.r", "green", [ "v-86.4", "h-370.3" ] ],
+    [ "uno:7", "btn3:2.r", "green", [ "v-67.2", "h-428.2" ] ],
+    [ "uno:8", "btn4:2.r", "green", [ "v-48", "h-498.6" ] ],
+    [ "btn2:1.l", "bb1:bn.4", "black", [ "v-48", "h228.8" ] ],
+    [ "btn3:1.l", "bb1:bn.5", "black", [ "v-38.4", "h324.8" ] ],
+    [ "btn4:1.l", "bb1:bn.6", "black", [ "v-28.8", "h430.4" ] ],
+    [ "bb1:bn.2", "relay1:GND", "black", [ "v27.5", "h-382.4", "v-76.4" ] ],
+    [ "uno:12", "relay1:IN", "orange", [ "v-28.8", "h-517.9", "v-335.8" ] ],
+    [ "bb1:bp.2", "relay1:COM", "red", [ "v-20.1", "h-180.8", "v-46.6" ] ],
+    [ "bb1:bn.25", "bb1:tn.25", "black", [ "h59.2", "v-174" ] ],
+    [ "relay1:NO", "r5:2", "green", [ "h0" ] ],
+    [ "bb1:tp.1", "relay2:VCC", "red", [ "v-114.9", "h-353.6", "v105.6" ] ],
+    [ "bb1:tn.3", "relay2:GND", "black", [ "v-144.1", "h-392", "v134.8" ] ],
+    [ "uno:13", "relay2:IN", "orange", [ "v-259.2", "h-498.8", "v-172.6" ] ],
+    [ "bb1:bp.3", "relay2:COM", "red", [ "v-96.9", "h-200", "v-75.4" ] ],
+    [ "relay2:NO", "r6:2", "green", [ "h0" ] ],
+    [ "bb1:tp.25", "bb1:bp.25", "red", [ "h97.6", "v174" ] ],
+    [ "bb1:tp.6", "relay1:VCC", "red", [ "v-162.9", "h-497.6", "v259.2", "h9.6" ] ],
+    [ "led4:C", "bb1:bn.10", "green", [ "h9.6", "v-94.7" ] ],
+    [ "led4:A", "r4:1", "green", [ "v0" ] ],
+    [ "uno:9", "r4:2", "green", [ "v0" ] ],
+    [ "led5:C", "bb1:tn.1", "green", [ "h38.4", "v-57.5" ] ],
+    [ "led5:A", "r5:1", "green", [ "v0" ] ],
+    [ "led6:C", "bb1:tn.4", "green", [ "v9.6", "h105.6" ] ],
+    [ "led6:A", "r6:1", "green", [ "v0" ] ],
+    [ "r3:1", "led3:A", "green", [ "h0" ] ],
+    [ "led3:C", "bb1:bn.15", "green", [ "v9.6", "h9.6" ] ],
+    [ "led2:A", "r2:1", "green", [ "v0" ] ],
+    [ "led2:C", "bb1:bn.19", "green", [ "v9.6", "h9.6" ] ],
+    [ "r1:1", "led1:A", "green", [ "h0" ] ],
+    [ "led1:C", "bb1:bn.23", "green", [ "v9.6", "h19.2" ] ]
+  ],
+  "dependencies": {}
+}
