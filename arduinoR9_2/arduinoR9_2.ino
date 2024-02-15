@@ -3,7 +3,7 @@
 // R9_2
 
 // 로그출력과 테스트 모드를 위한 매크로
-#define DEBUG 
+//#define DEBUG 
 
 #define BAUDRATE    9600
 #define LED_PULSE_HIGH   250    // analog level
