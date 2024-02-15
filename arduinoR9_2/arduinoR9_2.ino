@@ -3,7 +3,7 @@
 // R9_2
 
 // 로그출력과 테스트 모드를 위한 매크로
-//#define DEBUG 
+#define DEBUG 
 
 #define BAUDRATE    9600
 #define LED_PULSE_HIGH   250    // analog level
@@ -47,7 +47,7 @@
 //////////////////////////////////////////////////////////////
 // 
 // VDC지원 SSR 릴레이를 사용하는 경우
-#define USE_NEW_VDC_RELAY  
+#define USE_HIGH_TRIGGER_RELAY  
 
 // MIN, MAX 버튼을 누를경우 delay 값 조정
 #define EIN_24V_DELAY   320
@@ -486,7 +486,18 @@ void flashLed(int num, int ms, int led, int last_state)
 
 //////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////
-#ifdef USE_NEW_VDC_RELAY
+#ifdef USE_HIGH_TRIGGER_RELAY
+#define RELAY24_CONNECT HIGH
+#define RELAY24_DISCONN LOW
+#define RELAY34_CONNECT RELAY_HIGH
+#define RELAY34_DISCONN RELAY_LOW
+#else
+#define RELAY24_CONNECT LOW
+#define RELAY24_DISCONN HIGH
+#define RELAY34_CONNECT RELAY_LOW
+#define RELAY24_DISCONN RELAY_HIGH
+#endif
+
 void relayControll(int relay, int value)
 {
 #ifdef DEBUG    
@@ -496,37 +507,19 @@ void relayControll(int relay, int value)
   if(relay == RELAY24)
   {
     if(value == RELAY_CONNECT)
-      digitalWrite(RELAY24, HIGH);
+      digitalWrite(RELAY24, RELAY24_CONNECT);
     else
-      digitalWrite(RELAY24, LOW);
+      digitalWrite(RELAY24, RELAY24_DISCONN);
   }
   else
   {
     if(value == RELAY_CONNECT)
-      analogWrite(RELAY34, RELAY_HIGH);
+      analogWrite(RELAY34, RELAY34_CONNECT);
     else
-      analogWrite(RELAY34, RELAY_LOW);    
+      analogWrite(RELAY34, RELAY34_DISCONN);    
   }
 }
-#else
-void relayControll(int relay, int value)
-{
-  if(relay == RELAY24)
-  {
-    if(value == RELAY_CONNECT)
-      digitalWrite(RELAY24, LOW);
-    else
-      digitalWrite(RELAY24, HIGH);
-  }
-  else
-  {
-    if(value == RELAY_CONNECT)
-      analogWrite(RELAY34, RELAY_LOW);
-    else
-      analogWrite(RELAY34, RELAY_HIGH);    
-  }
-}
-#endif
+
 
 //////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////
