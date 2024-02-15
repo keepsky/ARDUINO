@@ -41,7 +41,7 @@
 //#define GO_24V_WHEN_EIN1
 
 // 두번째 EIN 버튼 눌렀을때 24V에서 delay후에 0V로 떨어짐
-#define GO_24V_WHEN_EIN2
+//#define GO_24V_WHEN_EIN2
 
 
 //////////////////////////////////////////////////////////////
